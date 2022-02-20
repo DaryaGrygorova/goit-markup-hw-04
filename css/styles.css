@@ -9,6 +9,7 @@
   --main-theme-color: #2196f3;
   --text-white-color: #ffffff;
   --main-bcg-color: #ffffff;
+  --no-active-icon-color: #afb1b8;
 }
 
 body {
@@ -143,9 +144,7 @@ p {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-
   color: var(--secondary-text-color);
-
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -154,44 +153,41 @@ p {
 .contact-nav-list {
   display: flex;
   margin-left: auto;
+  align-items: center;
 }
 
 .contact-nav {
   color: var(--primary-text-color);
-
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.02em;
+}
+.contact-nav-item {
+  display: inline-flex;
+  align-items: center;
 }
 .page-nav-item:not(:first-child),
 .contact-nav-item:not(:first-child) {
   margin-left: 50px;
 }
 
-.contact-nav:hover,
-.contact-nav:focus,
+.contact-icon {
+  margin-right: 10px;
+  align-items: center;
+  fill: var(--no-active-icon-color);
+}
+
 .page-nav:hover,
 .page-nav:focus {
   color: var(--main-theme-color);
 }
 
-a[class*='contact-nav'][href^='mailto']::before {
-  display: inline-block;
-  margin-right: 10px;
-  content: '';
-  width: 16px;
-  height: 12px;
-  background-image: url('../images/envelope.svg');
-  background-size: contain;
-}
-a[class*='contact-nav'][href^='tel:']::before {
-  display: inline-block;
-  margin-right: 10px;
-  content: '';
-  width: 10px;
-  height: 16px;
-  background-image: url('../images/smartphone.svg');
-  background-size: contain;
+.contact-nav-item:hover .contact-icon,
+.contact-nav-item:focus .contact-icon,
+.contact-nav-item:hover .contact-nav,
+.contact-nav-item:focus .contact-nav {
+  color: var(--main-theme-color);
+  fill: var(--main-theme-color);
 }
 
 /* Главная страница */
@@ -257,33 +253,13 @@ a[class*='contact-nav'][href^='tel:']::before {
 .qualities-list-item {
   min-width: 270px;
 }
-.qualities-list-item:before {
-  content: '';
-  display: block;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 120px;
-  background-color: #f5f4fa;
-}
 
-.qualities-list-item:nth-child(1):before {
-  background-image: url(../images/group1.svg);
-}
-.qualities-list-item:nth-child(2):before {
-  background-image: url(../images/group2.svg);
-}
-.qualities-list-item:nth-child(3):before {
-  background-image: url(../images/group3.svg);
-}
-.qualities-list-item:nth-child(4):before {
-  background-image: url(../images/group4.svg);
-}
 .qualities-list-item:not(:last-child) {
   margin-right: 30px;
 }
 
 .qualities-title {
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
@@ -363,6 +339,31 @@ a[class*='contact-nav'][href^='tel:']::before {
   margin-left: 30px;
 }
 
+.comunity-list {
+  display: flex;
+}
+.comunity-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.comunity-link {
+  display: block;
+  content: '';
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--main-bcg-color);
+  text-align: center;
+}
+
+.comunity-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--no-active-icon-color);
+}
+
 .team-card-discription .comunity-list {
   margin-top: 16px;
   justify-content: center;
@@ -376,7 +377,7 @@ a[class*='contact-nav'][href^='tel:']::before {
   line-height: 1.17;
   text-align: center;
   vertical-align: Top;
-  letter-spacing: 0.03;
+  letter-spacing: 0.03em;
   color: var(--secondary-text-color);
 }
 .clients-list {
@@ -390,10 +391,27 @@ a[class*='contact-nav'][href^='tel:']::before {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  text-align: center;
 }
 
 .clients-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.clients-logo {
+  width: 106px;
+  height: 60px;
+  fill: var(--no-active-icon-color);
+}
+
+.clients-item:hover,
+.clients-item:focus {
+  background-color: var(--main-theme-color);
+}
+
+.clients-item:hover .clients-logo,
+.clients-item:focus .clients-logo {
+  fill: var(--text-white-color);
 }
 
 /* Футер */
@@ -443,40 +461,21 @@ a[class*='contact-nav'][href^='tel:']::before {
   color: var(--text-white-color);
 }
 
-.comunity-list {
-  display: flex;
+.footer-comunity .comunity-link {
+  --main-bcg-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--main-bcg-color);
 }
-.comunity-item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.comunity-link {
-  display: inline-block;
-  content: '';
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  background-size: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.instagram.comunity-link {
-  background-image: url('../images/instagram.svg');
-}
-.twitter.comunity-link {
-  background-image: url('../images/twitter.svg');
-}
-.facebook.comunity-link {
-  background-image: url('../images/facebook.svg');
-}
-.linkedin.comunity-link {
-  background-image: url('../images/linkedin.svg');
+.footer-comunity .comunity-icon {
+  fill: var(--text-white-color);
 }
 .comunity-link:hover,
 .comunity-link:focus {
   background-color: var(--main-theme-color);
+}
+
+.comunity-link:hover .comunity-icon,
+.comunity-link:focus .comunity-icon {
+  fill: var(--text-white-color);
 }
 
 /* Страница Портфолио */
