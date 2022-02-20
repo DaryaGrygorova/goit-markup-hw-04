@@ -408,12 +408,12 @@ p {
 
 .clients-item:hover,
 .clients-item:focus {
-  background-color: var(--main-theme-color);
+  border-color: var(--main-theme-color);
 }
 
 .clients-item:hover .clients-logo,
 .clients-item:focus .clients-logo {
-  fill: var(--text-white-color);
+  fill: var(--main-theme-color);
 }
 
 /* Футер */
