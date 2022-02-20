@@ -157,15 +157,14 @@ p {
 }
 
 .contact-nav {
+  display: inline-flex;
+  align-items: center;
   color: var(--primary-text-color);
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.02em;
 }
-.contact-nav-item {
-  display: inline-flex;
-  align-items: center;
-}
+
 .page-nav-item:not(:first-child),
 .contact-nav-item:not(:first-child) {
   margin-left: 50px;
@@ -173,20 +172,18 @@ p {
 
 .contact-icon {
   margin-right: 10px;
-  align-items: center;
   fill: var(--no-active-icon-color);
 }
 
 .page-nav:hover,
-.page-nav:focus {
+.page-nav:focus,
+.contact-nav:hover,
+.contact-nav:focus {
   color: var(--main-theme-color);
 }
 
-.contact-nav-item:hover .contact-icon,
-.contact-nav-item:focus .contact-icon,
-.contact-nav-item:hover .contact-nav,
-.contact-nav-item:focus .contact-nav {
-  color: var(--main-theme-color);
+.contact-nav:hover .contact-icon,
+.contact-nav:focus .contact-icon {
   fill: var(--main-theme-color);
 }
 
@@ -253,6 +250,14 @@ p {
 }
 .qualities-list-item {
   min-width: 270px;
+}
+
+.qualities-item-wrapper {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  background: #f5f4fa;
+  border-radius: 4px;
 }
 
 .qualities-list-item:not(:last-child) {
@@ -360,8 +365,6 @@ p {
 }
 
 .comunity-icon {
-  width: 20px;
-  height: 20px;
   fill: var(--no-active-icon-color);
 }
 
@@ -400,8 +403,6 @@ p {
 }
 
 .clients-logo {
-  width: 106px;
-  height: 60px;
   fill: var(--no-active-icon-color);
 }
 
